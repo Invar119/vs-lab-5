@@ -1,21 +1,14 @@
-CREATE TABLE institutes (
-	id SERIAL PRIMARY KEY,
-	name VARCHAR(1024) NOT NULL
-)
-CREATE TABLE groups (
-	id SERIAL PRIMARY KEY,
-	name VARCHAR(2048) NOT NULL
-)
-ALTER TABLE groups
-ADD COLUMN shot_name VARCHAR(64) NOT NULL UNIQUE,
-ADD COLUMN year INT,
-ADD COLUMN institute_id INT NOT NULL;
-CREATE TABLE students (
-	id SERIAL PRIMARY KEY,
-)
-ALTER TABLE students
-ADD COLUMN surname VARCHAR(512) NOT NULL,
-ADD COLUMN name VARCHAR(512) NOT NULL,
-ADD COLUMN father_name VARCHAR(512),
-ADD COLUMN group_id INT NOT NULL;
-
+INSERT INTO institutes (name)
+VALUES ('Институт математики и информатики');
+INSERT INTO groups (name, shot_name, year, institute_id)
+VALUES ('Информатика и вычислительная техника', 'Б-ИВТ-25-1', 2025, 1),
+	   ('Информатика и вычислительная техника', 'Б-ИВТ-25-2', 2025, 1),
+	   ('Фундаментальная информатика и информационные технологии', 'Б-ФИИТ-25', 2025, 1),
+	   ('Прикладная информатика', 'Б-ПИ-25', 2025, 1);
+INSERT INTO students (surname, name, father_name, group_id)
+VALUES ('Степанов', 'Артур', 'Русланович', 1),
+	   ('Амвросьев', 'Данил', 'Николаевич', 1),
+	   ('Аммосова', 'Дайаана', 'Алексеевна', 1),
+	   ('Борисов', 'Любомир', 'Артемович', 1),
+	   ('Бояров', 'Максим', 'Николаевич', 1),
+	   ('Ермолаев', 'Айсен', 'Айалович', 1);
