@@ -1,14 +1,21 @@
-SELECT * FROM cathedral
+CREATE TABLE institutes (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(1024) NOT NULL
+)
+CREATE TABLE groups (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(2048) NOT NULL
+)
+ALTER TABLE groups
+ADD COLUMN shot_name VARCHAR(64) NOT NULL UNIQUE,
+ADD COLUMN year INT,
+ADD COLUMN institute_id INT NOT NULL;
+CREATE TABLE students (
+	id SERIAL PRIMARY KEY,
+)
+ALTER TABLE students
+ADD COLUMN surname VARCHAR(512) NOT NULL,
+ADD COLUMN name VARCHAR(512) NOT NULL,
+ADD COLUMN father_name VARCHAR(512),
+ADD COLUMN group_id INT NOT NULL;
 
-UPDATE groups
-set cathedrial_id = 1
-WHERE groups.year = 2025
-
-UPDATE groups
-set cathedrial_id = 2
-WHERE groups.shot_name = 'Б-ПИ-25'
-
-SELECT * FROM groups;
-
-SELECT * FROM groups
-WHERE groups.cathedrial_id = '1';
