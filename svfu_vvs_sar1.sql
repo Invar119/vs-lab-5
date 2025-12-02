@@ -1,14 +1,14 @@
-INSERT INTO institutes (name)
-VALUES ('Институт математики и информатики');
-INSERT INTO groups (name, shot_name, year, institute_id)
-VALUES ('Информатика и вычислительная техника', 'Б-ИВТ-25-1', 2025, 1),
-	   ('Информатика и вычислительная техника', 'Б-ИВТ-25-2', 2025, 1),
-	   ('Фундаментальная информатика и информационные технологии', 'Б-ФИИТ-25', 2025, 1),
-	   ('Прикладная информатика', 'Б-ПИ-25', 2025, 1);
-INSERT INTO students (surname, name, father_name, group_id)
-VALUES ('Степанов', 'Артур', 'Русланович', 1),
-	   ('Амвросьев', 'Данил', 'Николаевич', 1),
-	   ('Аммосова', 'Дайаана', 'Алексеевна', 1),
-	   ('Борисов', 'Любомир', 'Артемович', 1),
-	   ('Бояров', 'Максим', 'Николаевич', 1),
-	   ('Ермолаев', 'Айсен', 'Айалович', 1);
+SELECT * FROM cathedral
+
+UPDATE groups
+set cathedrial_id = 1
+WHERE groups.year = 2025
+
+UPDATE groups
+set cathedrial_id = 2
+WHERE groups.shot_name = 'Б-ПИ-25'
+
+SELECT * FROM groups;
+
+SELECT * FROM groups
+WHERE groups.cathedrial_id = '1';
